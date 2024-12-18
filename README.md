@@ -21,6 +21,7 @@
 ---
 
 # JWT Authentication
+## First Try
 ### Configurations
 - in the settings.py file I configured some information like:
     - ACCESS_TOKEN_LIFETIME: one minute for testing
@@ -33,3 +34,7 @@
     - refresh a token with a refresh token
 ### in views
 - Used in the update and retrieve endpoint
+## Second Try
+- Used the **Blacklist** feature and the rotate and the refresh token black list
+- but will delete the rotate the next time because i see that it is not that good
+- Unsolved problem: That thw access token is not deleted after logout, it will to wait untill expire, not like the refresh one
