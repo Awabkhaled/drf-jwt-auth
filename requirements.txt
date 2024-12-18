@@ -1,0 +1,6 @@
+Django
+djangorestframework
+python-decouple
+flake8
+drf-spectacular
+djangorestframework-simplejwt[crypto]
