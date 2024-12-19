@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'user',
     'rest_framework',
     'rest_framework_simplejwt',
-     'rest_framework_simplejwt.token_blacklist',
+    'rest_framework_simplejwt.token_blacklist',
+    'comment',
 ]
 
 MIDDLEWARE = [
@@ -142,5 +143,10 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': True,
     'SIGNING_KEY': config('SECRET_KEY'),
     'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True
+    'BLACKLIST_AFTER_ROTATION': True,
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",
+                           'rest_framework_simplejwt.tokens.SlidingToken',),
+    # Sliding Token settings
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=15),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=2),
 }

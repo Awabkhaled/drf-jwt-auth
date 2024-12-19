@@ -6,7 +6,9 @@ from .views import (
 )
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
-    TokenRefreshView
+    TokenRefreshView,
+    TokenObtainSlidingView,
+    TokenRefreshSlidingView
 )
 
 
@@ -16,4 +18,8 @@ urlpatterns = [
     path('signup/', CreateUser.as_view(), name="create"),
     path('update_get/', UpdateRetrieveUser.as_view(), name="update_get"),
     path('logout/', Logout.as_view(), name='Logout'),
+    path('sliding-login/', TokenObtainSlidingView.as_view(),
+         name='sliding_token_obtain'),
+    path('sliding-login/refresh/', TokenRefreshSlidingView.as_view(),
+         name='sliding_token_refresh'),
 ]
