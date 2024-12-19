@@ -1,6 +1,7 @@
 # drf-jwt-auth
 ### Small Description
 - A RESTful API designed to exercise JSON Web Tokens (JWT) using Django Rest Framework (DRF) with the SimpleJWT package.
+- Also designed to test using django signals, both built-in and custom one.
 ### JWT related features applied
 - Main JWT configurations
 - Applied Authentication using `Access Token` and `Refresh Token`
@@ -44,3 +45,9 @@
 ## Third Try (Sliding Token)
 - Applied the sliding token through adding the Comment model
     - I though at first that the view can only had one way, but then understood that sliding is just the type of token not the type of authentication
+
+---
+
+# Signals
+- Used the `post_save` signal on the user model, to log the created user in a log file *configured in settings*
+- Used a custom signal to log a comment when it is updated

@@ -150,3 +150,39 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=15),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=2),
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'detailed': {
+            'format': '%(asctime)s - %(message)s',
+        },
+    },
+    'handlers': {
+        'user_creation_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'user/log/user_creation.log',
+            'formatter': 'detailed',
+        },
+        'comment_update_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'comment/log/comment_updates.log',
+            'formatter': 'detailed',
+        },
+    },
+    'loggers': {
+        'user_creation_logger': {
+            'handlers': ['user_creation_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'comment_update_logger': {
+            'handlers': ['comment_update_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
