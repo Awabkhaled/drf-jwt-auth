@@ -1,7 +1,11 @@
 # drf-jwt-auth
 ### Small Description
 - A RESTful API designed to exercise JSON Web Tokens (JWT) using Django Rest Framework (DRF) with the SimpleJWT package.
-
+### JWT related features applied
+- Main JWT configurations
+- Applied Authentication using `Access Token` and `Refresh Token`
+- Used `Blacklisting`
+- Used `Sliding Token` in authentication
 ---
 
 # User
